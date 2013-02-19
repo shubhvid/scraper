@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		51D74AB816D1E8E9005548A1 /* scraper.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = scraper.py; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		51D74AAD16D1E86C005548A1 = {
 			isa = PBXGroup;
 			children = (
+				51D74AB816D1E8E9005548A1 /* scraper.py */,
 			);
 			sourceTree = "<group>";
 		};
@@ -23,6 +28,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/python;
+			buildWorkingDirectory = "";
 			dependencies = (
 			);
 			name = Scraper;

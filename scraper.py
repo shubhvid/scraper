@@ -1,7 +1,6 @@
 import sys
 import os
 import re
-import json
 from Queue import Queue
 import threading
 import urllib2
@@ -92,7 +91,7 @@ class Scraper:
                 if arg[0] == '-' or arg == "/?":
                     if arg.lower() in ['--url', '-u', '-url']:
                         self.url = args[0].strip()
-                        if not self.url.endswith('/')
+                        if not self.url.endswith('/'):
                             self.url = self.url + '/'
                         del args[0]
                     
@@ -121,12 +120,15 @@ class Scraper:
             wt.start()
         urlQueue.put(self.url)
         urlQueue.join()
-        print rpmDict
-        jsonoutput = json.dumps(rpmDict, sort_keys=True)
+        rpms = rpmDict.keys()
+        rpms.sort()
         f = None
         try:
-            f = open(self.outfile + ".json", 'w')
-            f.write(jsonoutput)
+            f = open(self.outfile + ".html", 'w')
+            for k in rpms:
+                f.write('<HTML><BODY>\n')
+                f.write("<a href=\"" + rpmDict[k]+k + "\">" + k + "</a><br/>\n")
+                f.write('</BODY></HTML>')
         finally:
             if f:
                 f.close()
