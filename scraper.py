@@ -1,3 +1,17 @@
+###############################################
+# March 3, 2013
+#
+# Authors:
+# 1. Shubham Vidyarthi
+# URL: http://www.svidyarthi.com
+# Email: shubhvid@gmail.com
+#
+###############################################
+
+
+
+
+
 import sys
 import os
 import re
@@ -15,20 +29,6 @@ def debug(msg):
     if DEBUG:
         print "DEBUG: %s" % msg
 
-#class Scrape:
-#
-#def consumer():
-#    while True:
-#        print sum(q.get())
-#
-#def producer(data_source):
-#    for line in data_source:
-#        q.put( map(int, line.split()) )
-#
-#Thread(target=producer, args=[SOME_INPUT_FILE_OR_SOMETHING]).start()
-#
-#for i in range(10):
-#    Thread(target=consumer).start()
 
 class Worker (threading.Thread):
     def __init__(self):
